@@ -1,0 +1,3 @@
+rs.printSecondaryReplicationInfo();
+
+rs.printReplicationInfo();
