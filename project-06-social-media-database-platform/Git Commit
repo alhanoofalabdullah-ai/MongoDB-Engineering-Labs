@@ -1,0 +1,5 @@
+git add .
+
+git commit -m "add project 06 social media database platform"
+
+git push
