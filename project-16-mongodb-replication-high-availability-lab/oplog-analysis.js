@@ -1,0 +1,5 @@
+use local;
+
+db.oplog.rs.find()
+.sort({ $natural: -1 })
+.limit(20);
