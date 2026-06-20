@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+
+  configsvr:
+    image: mongo:7
+    container_name: configsvr
+    command: mongod --configsvr --replSet configReplSet
+
+  shard1:
+    image: mongo:7
+    container_name: shard1
+    command: mongod --shardsvr --replSet shard1Repl
+
+  shard2:
+    image: mongo:7
+    container_name: shard2
+    command: mongod --shardsvr --replSet shard2Repl
+
+  shard3:
+    image: mongo:7
+    container_name: shard3
+    command: mongod --shardsvr --replSet shard3Repl
+
+  mongos:
+    image: mongo:7
+    container_name: mongos
+    command: mongos --configdb configReplSet/configsvr:27017
+    ports:
+      - "27017:27017"
