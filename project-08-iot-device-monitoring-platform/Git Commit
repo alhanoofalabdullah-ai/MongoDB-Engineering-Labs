@@ -1,0 +1,5 @@
+git add .
+
+git commit -m "add project 08 iot device monitoring platform"
+
+git push
